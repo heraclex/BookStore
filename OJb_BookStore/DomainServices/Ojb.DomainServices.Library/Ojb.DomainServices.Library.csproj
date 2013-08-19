@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04D6DBB9-5835-4830-9DFC-1686E53D447E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ojb.DomainServices.Library</RootNamespace>
+    <AssemblyName>Ojb.DomainServices.Library</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrapper\AutofacConfiguration.cs" />
+    <Compile Include="Managers\UserManager.cs" />
+    <Compile Include="ServiceImp\AccountService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataModules\Security\Ojb.DataModules.Security.Contract\Ojb.DataModules.Security.Contract.csproj">
+      <Project>{c6f81540-c6a7-43fa-b411-8b97056852f6}</Project>
+      <Name>Ojb.DataModules.Security.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Ojb.Framework.Domain\Ojb.Framework.Domain.csproj">
+      <Project>{8A6B29CB-9042-4F0F-B1EF-E6F5CE0DD110}</Project>
+      <Name>Ojb.Framework.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Ojb.Framework.ServiceBase\Ojb.Framework.ServiceBase.csproj">
+      <Project>{CFEFA6A8-7D5F-4421-96AE-DF131B11D3F9}</Project>
+      <Name>Ojb.Framework.ServiceBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ojb.DomainServices.Contract\Ojb.DomainServices.Contract.csproj">
+      <Project>{75b1afcc-f9e3-4be1-8de4-c0dee3e2b2f3}</Project>
+      <Name>Ojb.DomainServices.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Start\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
