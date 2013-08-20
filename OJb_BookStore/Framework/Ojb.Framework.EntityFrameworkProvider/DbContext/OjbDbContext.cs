@@ -75,8 +75,8 @@ namespace Ojb.Framework.EntityFrameworkProvider.DbContext
             : base(CreateTracingConnection(connectionString), true)
         {
             // Only for debug mode
-            if (log.IsDebugEnabled)
-            {
+            // if (log.IsDebugEnabled)
+            // {
                 ObjectContext cx = ((IObjectContextAdapter) this).ObjectContext;
                 cx.EnableTracing();
 
@@ -89,7 +89,7 @@ namespace Ojb.Framework.EntityFrameworkProvider.DbContext
                             c.CommandFailed += (s, e) => LogSql(e, CommandState.CommandFailed);
                             c.CommandFinished += (s, e) => LogSql(e, CommandState.CommandFinished);
                         });
-            }
+            // }
         }
         
         /// <summary>

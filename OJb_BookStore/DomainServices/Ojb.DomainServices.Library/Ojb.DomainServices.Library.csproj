@@ -31,8 +31,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\packages\Autofac.3.0.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\..\packages\Autofac.3.0.2\lib\net40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Wcf">
+      <HintPath>..\..\WebApp\Bin\Autofac.Integration.Wcf.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Bootstrapper\AutofacConfiguration.cs" />
     <Compile Include="Managers\UserManager.cs" />
+    <Compile Include="ServiceConfiguration\DependencyInjectionInstanceProvider.cs" />
     <Compile Include="ServiceImp\AccountService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -50,13 +66,29 @@
       <Project>{c6f81540-c6a7-43fa-b411-8b97056852f6}</Project>
       <Name>Ojb.DataModules.Security.Contract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\DataModules\Security\Ojb.DataModules.Security.Provider\Ojb.DataModules.Security.Provider.csproj">
+      <Project>{28266f42-af5c-4453-bafb-e7d71381f7b3}</Project>
+      <Name>Ojb.DataModules.Security.Provider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Ojb.Framework.Common\Ojb.Framework.Common.csproj">
+      <Project>{E911FB7E-6F38-487E-91BF-945676037D71}</Project>
+      <Name>Ojb.Framework.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Framework\Ojb.Framework.Domain\Ojb.Framework.Domain.csproj">
       <Project>{8A6B29CB-9042-4F0F-B1EF-E6F5CE0DD110}</Project>
       <Name>Ojb.Framework.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Ojb.Framework.EntityFrameworkProvider\Ojb.Framework.EntityFrameworkProvider.csproj">
+      <Project>{C3BF8D1F-C6FB-4E57-9E3B-CB3414D610DA}</Project>
+      <Name>Ojb.Framework.EntityFrameworkProvider</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Framework\Ojb.Framework.ServiceBase\Ojb.Framework.ServiceBase.csproj">
       <Project>{CFEFA6A8-7D5F-4421-96AE-DF131B11D3F9}</Project>
       <Name>Ojb.Framework.ServiceBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Ojb.Framework.WebBase\Ojb.Framework.WebBase.csproj">
+      <Project>{8B4E84D5-B87C-4DFB-84E4-82A845462BE3}</Project>
+      <Name>Ojb.Framework.WebBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ojb.DomainServices.Contract\Ojb.DomainServices.Contract.csproj">
       <Project>{75b1afcc-f9e3-4be1-8de4-c0dee3e2b2f3}</Project>

@@ -1,0 +1,12 @@
+﻿
+
+<%@ ServiceHost Language="C#" Debug="true" 
+    Service="Ojb.DomainServices.Library.ServiceImp.AccountService" %>
+
+<%@ ServiceHost Language="C#" Debug="true" 
+Service="Ojb.DomainServices.Library.ServiceImp.AccountService" 
+Factory="Ojb.DomainServices.Library.App_Start.ServicesHostFactory"%> 
+
+<%@ ServiceHost
+    Service="TestService.IService1, TestService"
+    Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf" %>
