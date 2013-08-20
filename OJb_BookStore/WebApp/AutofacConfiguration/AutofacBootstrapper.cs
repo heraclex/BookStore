@@ -162,7 +162,10 @@ namespace WebApp.AutofacConfiguration
 
         private void RegisterServiceIoC()
         {
+            // https://code.google.com/p/autofac/wiki/WcfIntegration#Clients
+
             //***** Simple way and doesn't want to include interceptor *********/
+
 
             //builder.Register(c => new System.ServiceModel.ChannelFactory<IAccountService>(
             //    new CustomBinding("customOverHttps"),
