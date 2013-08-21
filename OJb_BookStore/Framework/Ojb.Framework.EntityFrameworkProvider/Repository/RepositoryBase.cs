@@ -60,13 +60,17 @@ namespace Ojb.Framework.EntityFrameworkProvider.Repository
         /// The db context.
         /// </param>
         /// <exception cref="ArgumentNullException">
+        /// Argument Null Exception
         /// </exception>
         public RepositoryWithTypedId(System.Data.Entity.DbContext dbContext)
         {
-            if (dbContext == null) throw new ArgumentNullException("dbContext may not be null");
+            if (dbContext == null)
+            {
+                throw new ArgumentNullException("dbContext may not be null");
+            }
 
-            _dbContext = dbContext;
-            Includes = new Collection<string>();
+            this._dbContext = dbContext;
+            this.Includes = new Collection<string>();
         }
 
         /// <summary>

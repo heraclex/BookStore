@@ -8,6 +8,8 @@ using Ojb.DataModules.Security.Provider.Repository;
 using Ojb.DomainServices.Contract.Services;
 using Ojb.DomainServices.Library.ServiceImp;
 using Ojb.Framework.Common.Logger;
+using Ojb.Framework.Domain.Interfaces;
+using Ojb.Framework.EntityFrameworkProvider.Repository;
 
 namespace Ojb.DomainServices.Library.Bootstrapper
 {
@@ -45,10 +47,11 @@ namespace Ojb.DomainServices.Library.Bootstrapper
         /// </summary>
         public void DoStart()
         {
-            logger.Info("/******** Servicves starts *********/");
-            RegisterComponents();
-            ConfigureIoc();
-            logger.Info("/******** Servicves started sucessfully *********/");
+            this.logger.Info("/******** Servicves starts *********/");
+            this.RegisterComponents();
+            this.ConfigureIoc();
+
+            this.logger.Info("/******** Servicves started sucessfully *********/");
         }
 
         #region Register For Autofac
@@ -59,15 +62,16 @@ namespace Ojb.DomainServices.Library.Bootstrapper
         private void ConfigureIoc()
         {
             this.container = this.builder.Build();
-            AutofacHostFactory.Container = container;
+
+            AutofacHostFactory.Container = this.container;
         }
 
-        // / Should be refactored
         /// <summary>
         /// The register components.
         /// </summary>
         private void RegisterComponents()
         {
+            // TODO: Should be refactored
             // Register individual components
             this.RegisterServicesImp();
             this.RegisterProvider();
@@ -79,9 +83,12 @@ namespace Ojb.DomainServices.Library.Bootstrapper
         private void RegisterServicesImp()
         {
             // registering all things needed for building data context
-            this.builder.RegisterType<AccountService>().As<IAccountService>();
+            this.builder.RegisterType<AccountService>().AsImplementedInterfaces();
         }
 
+        /// <summary>
+        /// The register provider.
+        /// </summary>
         private void RegisterProvider()
         {
             // registering all things needed for building data context
@@ -92,12 +99,26 @@ namespace Ojb.DomainServices.Library.Bootstrapper
 
             this.builder.RegisterInstance(new SecurityDbContext(connStr)).AsSelf();
 
-            this.builder.RegisterGeneric(typeof (SecurityRepository<>))
-                .As(typeof (ISecurityRepository<>))
-                .WithParameter((pi, c) => pi.ParameterType == typeof (DbContext),
-                               (pi, c) => c.Resolve<SecurityDbContext>());
+            //this.builder.RegisterGeneric(typeof(SecurityRepository<>))
+            //    .As(typeof(ISecurityRepository<>))
+            //    .WithParameter((pi, c) => pi.ParameterType == typeof(System.Data.Entity.DbContext),
+            //                   (pi, c) => c.Resolve<SecurityDbContext>());
+
+
+            this.builder.RegisterType(typeof (SecurityRepository<>)).As(typeof (ISecurityRepository<>));
+            //.WithParameter((pi, c) => pi.ParameterType == typeof(System.Data.Entity.DbContext),
+            //               (pi, c) => c.Resolve<SecurityDbContext>());
         }
 
         #endregion
+    }
+
+
+    public class CoreModule : Module
+    {
+        protected override void Load(ContainerBuilder builder)
+        {
+            base.Load(builder);
+        }
     }
 }
