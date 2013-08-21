@@ -1,16 +1,19 @@
-﻿namespace Ojb.DomainServices.Library.Bootstrapper
+﻿using System.Configuration;
+using System.Data.Entity;
+using Autofac;
+using Autofac.Integration.Wcf;
+using Ojb.DataModules.Security.Contract.Repository;
+using Ojb.DataModules.Security.Provider.Context;
+using Ojb.DataModules.Security.Provider.Repository;
+using Ojb.DomainServices.Contract.Services;
+using Ojb.DomainServices.Library.ServiceImp;
+using Ojb.Framework.Common.Logger;
+
+namespace Ojb.DomainServices.Library.Bootstrapper
 {
-    using Autofac;
-    using Autofac.Integration.Wcf;
-
-    using Ojb.DataModules.Security.Contract.Repository;
-    using Ojb.DataModules.Security.Provider.Context;
-    using Ojb.DataModules.Security.Provider.Repository;
-    using Ojb.DomainServices.Contract.Services;
-    using Ojb.DomainServices.Library.ServiceImp;
-    using Ojb.Framework.Common.Logger;
-    using Ojb.Framework.WebBase.Configurations.Impl;
-
+    /// <summary>
+    /// The autofac configuration.
+    /// </summary>
     public class AutofacConfiguration
     {
         #region Static Fields
@@ -18,7 +21,7 @@
         /// <summary>
         ///     The log4net logger instance.
         /// </summary>
-        private readonly ILogger logger = LogManager.GetLogger(typeof(AutofacConfiguration));
+        private readonly ILogger logger = LogManager.GetLogger(typeof (AutofacConfiguration));
 
         #endregion
 
@@ -42,10 +45,10 @@
         /// </summary>
         public void DoStart()
         {
-            this.logger.Info("/******** Servicves starts *********/");
-            this.RegisterComponents();
-            this.ConfigureIoc();
-            this.logger.Info("/******** Servicves started sucessfully *********/");
+            logger.Info("/******** Servicves starts *********/");
+            RegisterComponents();
+            ConfigureIoc();
+            logger.Info("/******** Servicves started sucessfully *********/");
         }
 
         #region Register For Autofac
@@ -56,10 +59,13 @@
         private void ConfigureIoc()
         {
             this.container = this.builder.Build();
-            AutofacHostFactory.Container = this.container;
+            AutofacHostFactory.Container = container;
         }
 
-        // Should be refactored
+        // / Should be refactored
+        /// <summary>
+        /// The register components.
+        /// </summary>
         private void RegisterComponents()
         {
             // Register individual components
@@ -67,6 +73,9 @@
             this.RegisterProvider();
         }
 
+        /// <summary>
+        /// The register services imp.
+        /// </summary>
         private void RegisterServicesImp()
         {
             // registering all things needed for building data context
@@ -78,15 +87,15 @@
             // registering all things needed for building data context
             // builder.RegisterInstance(new SecurityDbContext("SecurityConnection")).AsSelf();
 
-            var connStr =
-                System.Configuration.ConfigurationManager.ConnectionStrings["SecurityConnection"].ConnectionString;
+            string connStr =
+                ConfigurationManager.ConnectionStrings["SecurityConnection"].ConnectionString;
 
-            builder.RegisterInstance(new SecurityDbContext(connStr)).AsSelf();
+            this.builder.RegisterInstance(new SecurityDbContext(connStr)).AsSelf();
 
-            builder.RegisterGeneric(typeof(SecurityRepository<>))
-                   .As(typeof(ISecurityRepository<>))
-                   .WithParameter((pi, c) => pi.ParameterType == typeof(System.Data.Entity.DbContext),
-                                  (pi, c) => c.Resolve<SecurityDbContext>());
+            this.builder.RegisterGeneric(typeof (SecurityRepository<>))
+                .As(typeof (ISecurityRepository<>))
+                .WithParameter((pi, c) => pi.ParameterType == typeof (DbContext),
+                               (pi, c) => c.Resolve<SecurityDbContext>());
         }
 
         #endregion

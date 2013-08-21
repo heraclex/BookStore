@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Web;
+using Ojb.DomainServices.Library.Bootstrapper;
 
 namespace Ojb.DomainServices.Host
 {
-    using Ojb.DomainServices.Library.Bootstrapper;
-
     /// <summary>
     /// Global application class for the multitenant WCF example application.
     /// </summary>
@@ -22,9 +21,7 @@ namespace Ojb.DomainServices.Host
         /// </summary>
         protected void Application_Start(object sender, EventArgs e)
         {
-
             // https://code.google.com/p/autofac/source/browse/Examples/MultitenantExample.WcfService/Global.asax.cs
-
             var bootStart = new AutofacConfiguration();
             bootStart.DoStart();
         }
