@@ -61,9 +61,7 @@ namespace Ojb.DomainServices.Library.Bootstrapper
         /// </summary>
         private void ConfigureIoc()
         {
-            this.container = this.builder.Build();
-
-            AutofacHostFactory.Container = this.container;
+            AutofacHostFactory.Container = this.builder.Build();
         }
 
         /// <summary>
@@ -83,7 +81,8 @@ namespace Ojb.DomainServices.Library.Bootstrapper
         private void RegisterServicesImp()
         {
             // registering all things needed for building data context
-            this.builder.RegisterType<AccountService>().AsImplementedInterfaces();
+            // this.builder.RegisterType<AccountService>().As<IAccountService>();
+            builder.RegisterType<AccountService>();
         }
 
         /// <summary>
@@ -105,20 +104,16 @@ namespace Ojb.DomainServices.Library.Bootstrapper
             //                   (pi, c) => c.Resolve<SecurityDbContext>());
 
 
-            this.builder.RegisterType(typeof (SecurityRepository<>)).As(typeof (ISecurityRepository<>));
+            //this.builder.RegisterGeneric(typeof(RepositoryBase<>)).As(typeof(IRepositoryBase<>))
             //.WithParameter((pi, c) => pi.ParameterType == typeof(System.Data.Entity.DbContext),
             //               (pi, c) => c.Resolve<SecurityDbContext>());
+
+            this.builder.RegisterGeneric(typeof(SecurityRepository<>)).As(typeof(ISecurityRepository<>))
+            .WithParameter((pi, c) => pi.ParameterType == typeof(System.Data.Entity.DbContext),
+                           (pi, c) => c.Resolve<SecurityDbContext>());
         }
 
         #endregion
     }
 
-
-    public class CoreModule : Module
-    {
-        protected override void Load(ContainerBuilder builder)
-        {
-            base.Load(builder);
-        }
-    }
 }

@@ -24,6 +24,8 @@ namespace Ojb.DataModules.Security.Mapping.Mappings
         /// </summary>
         public UserMapping()
         {
+            this.ToTable("User");
+            this.Property(x => x.Id).HasColumnName("UserId");
             this.Property(x => x.UserName);
             this.HasMany(x => x.CustomerInfomations);
         }

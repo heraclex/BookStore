@@ -45,17 +45,17 @@ namespace Ojb.DataModules.Security.Provider.Context
         /// <summary>
         /// Gets or sets the user profiles.
         /// </summary>
-        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<UserProfile> UserProfile { get; set; }
 
         /// <summary>
         /// Gets or sets the users.
         /// </summary>
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> User { get; set; }
 
         /// <summary>
         /// Gets or sets the roles.
         /// </summary>
-        public DbSet<Role> Roles { get; set; }
+        public DbSet<Role> Role { get; set; }
 
         /// <summary>
         /// The on model creating.

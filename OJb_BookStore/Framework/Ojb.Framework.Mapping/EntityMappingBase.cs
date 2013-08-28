@@ -8,15 +8,15 @@
     {
         protected EntityMappingBase()
         {
-            HasKey(x => x.Id);
+            this.HasKey(x => x.Id);
 
             #region Audit section
 
-            Property(x => x.CreatedBy).HasColumnName("CreatedBy");
-            Property(x => x.CreatedDate).HasColumnName("CreatedDate");
-            Property(x => x.ModifiedBy).HasColumnName("ModifiedBy");
-            Property(x => x.ModifiedDate).HasColumnName("ModifiedDate");
-            Property(x => x.IsDeleted).HasColumnName("IsDeleted");
+            this.Property(x => x.CreatedBy).HasColumnName("CreatedBy");
+            this.Property(x => x.CreatedDate).HasColumnName("CreatedDate");
+            this.Property(x => x.ModifiedBy).HasColumnName("ModifiedBy");
+            this.Property(x => x.ModifiedDate).HasColumnName("ModifiedDate");
+            this.Property(x => x.IsDeleted).HasColumnName("IsDeleted");
             
             #endregion
         }

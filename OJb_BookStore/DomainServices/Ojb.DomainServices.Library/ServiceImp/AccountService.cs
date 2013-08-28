@@ -18,6 +18,8 @@ using Ojb.Framework.ServiceBase.Imps;
 
 namespace Ojb.DomainServices.Library.ServiceImp
 {
+    using System.Linq;
+
     /// <summary>
     /// The account service.
     /// </summary>
@@ -45,8 +47,9 @@ namespace Ojb.DomainServices.Library.ServiceImp
         /// <returns>
         /// The <see cref="List"/>.
         /// </returns>
-        List<AccountInfo> IAccountService.GetAllAccountInfo()
+        IEnumerable<AccountInfo> IAccountService.GetAllAccountInfo()
         {
+
             return new List<AccountInfo>
                 {
                     new AccountInfo
@@ -59,6 +62,24 @@ namespace Ojb.DomainServices.Library.ServiceImp
                             UserName = "a", 
                         }
                 };
+        }
+
+        /// <summary>
+        /// The get all account.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="List"/>.
+        /// </returns>
+        IEnumerable<AccountInfo> IAccountService.GetAllAccount()
+        {
+            var users = this.SecurityUserRepository.GetAll();
+            return users.Select(
+                x => new AccountInfo 
+                { 
+                    UserName = x.UserName ,
+                    Id = x.Id,
+                    Password = x.Password
+                }).ToList();
         }
     }
 }

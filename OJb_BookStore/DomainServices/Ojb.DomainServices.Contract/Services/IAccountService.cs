@@ -9,6 +9,9 @@
     public interface IAccountService : IService
     {
         [OperationContract]
-        List<AccountInfo> GetAllAccountInfo();
+        IEnumerable<AccountInfo> GetAllAccountInfo();
+
+        [OperationContract]
+        IEnumerable<AccountInfo> GetAllAccount();
     }
 }

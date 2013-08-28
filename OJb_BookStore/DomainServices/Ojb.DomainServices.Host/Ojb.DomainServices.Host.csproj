@@ -93,6 +93,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Ojb.Framework.Common\Ojb.Framework.Common.csproj">
+      <Project>{E911FB7E-6F38-487E-91BF-945676037D71}</Project>
+      <Name>Ojb.Framework.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ojb.DomainServices.Contract\Ojb.DomainServices.Contract.csproj">
       <Project>{75b1afcc-f9e3-4be1-8de4-c0dee3e2b2f3}</Project>
       <Name>Ojb.DomainServices.Contract</Name>
