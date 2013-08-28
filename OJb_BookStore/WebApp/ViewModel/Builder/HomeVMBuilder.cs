@@ -12,8 +12,7 @@ namespace WebApp.ViewModel.Builder
 
         public HomeVM BuidlerHomeView()
         {
-            var a = this.service.GetAllAccountInfo();
-            return new HomeVM();
+            return new HomeVM{AccountList = this.service.GetAllAccount()};
         }
     }
 }

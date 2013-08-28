@@ -1,4 +1,6 @@
-﻿@{
+﻿@model WebApp.ViewModel.HomeVM
+
+@{
     ViewBag.Title = "Home Page";
 }
 @section featured {
@@ -43,3 +45,13 @@
         <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
     </li>
 </ol>
+
+<div>
+    @{
+        foreach (var acc in Model.AccountList)
+        {
+            <h5>@acc.UserName</h5>
+                @acc.UserName
+        }
+    }
+</div>

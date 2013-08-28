@@ -1,15 +1,11 @@
 ﻿
 using System.Collections.Generic;
-using WebApp.Models;
+using Ojb.DomainServices.Contract.MessageModels;
 
 namespace WebApp.ViewModel
 {
     public class HomeVM
     {
-        public List<int> NumberList { get; set; }
-
-        public List<string> NameList { get; set; }
-
-        public List<RegisterModel> AccModelList { get; set; }
+        public IEnumerable<AccountInfo> AccountList { get; set; }
     }
 }

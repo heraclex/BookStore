@@ -18,11 +18,11 @@
 
         public ActionResult Index()
         {
-            var a = this.homeVMBuilder.BuidlerHomeView();
+            var homeVM = this.homeVMBuilder.BuidlerHomeView();
 
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
-            return View();
+            return View(homeVM);
         }
 
         public ActionResult About()
