@@ -18,6 +18,5 @@ namespace Ojb.DataModules.Security.Contract.Repository
     /// </typeparam>
     public interface ISecurityRepository<T> : IRepositoryBase<T> where T : class
     {
-
     }
 }
