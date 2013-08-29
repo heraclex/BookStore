@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +47,20 @@
     <Compile Include="Mappings\OrderMapping.cs" />
     <Compile Include="Mappings\ProductMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Ojb.Framework.Domain\Ojb.Framework.Domain.csproj">
+      <Project>{8a6b29cb-9042-4f0f-b1ef-e6f5ce0dd110}</Project>
+      <Name>Ojb.Framework.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Ojb.Framework.Mapping\Ojb.Framework.Mapping.csproj">
+      <Project>{a8ea88fb-14b2-419f-8023-d3f3f57ab42b}</Project>
+      <Name>Ojb.Framework.Mapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ojb.DataModules.Product.Contract\Ojb.DataModules.Product.Contract.csproj">
+      <Project>{03BE6E2A-EB31-48D7-9B9B-0C652A2EB4E7}</Project>
+      <Name>Ojb.DataModules.Product.Contract</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
