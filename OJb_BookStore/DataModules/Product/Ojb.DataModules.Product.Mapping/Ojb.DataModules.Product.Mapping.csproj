@@ -39,10 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mapping\CategoryMapping.cs" />
-    <Compile Include="Mapping\OrderDetailMapping.cs" />
-    <Compile Include="Mapping\OrderMapping.cs" />
-    <Compile Include="Mapping\ProductMapping.cs" />
+    <Compile Include="Mappings\CategoryMapping.cs" />
+    <Compile Include="Mappings\OrderDetailMapping.cs" />
+    <Compile Include="Mappings\OrderMapping.cs" />
+    <Compile Include="Mappings\ProductMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
