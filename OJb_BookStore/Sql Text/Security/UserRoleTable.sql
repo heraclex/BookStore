@@ -5,8 +5,8 @@ CREATE TABLE [dbo].[UserRole]
 	[RoleId]		 INT			NOT NULL,
 
 	/*********** Static fields************/
-    [CreateBy]       VARCHAR(150)   NOT NULL,
-    [CreateDate]     DATETIME       NOT NULL,
+    [CreatedBy]       VARCHAR(150)   NOT NULL,
+    [CreatedDate]     DATETIME       NOT NULL,
     [ModifiedBy]	 VARCHAR(150)		NULL,
     [ModifiedDate]   DATETIME			NULL,
     [IsDeleted]      BIT			NOT NULL
