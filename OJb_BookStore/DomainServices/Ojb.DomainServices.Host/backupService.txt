@@ -10,3 +10,8 @@ Factory="Ojb.DomainServices.Library.App_Start.ServicesHostFactory"%>
 <%@ ServiceHost
     Service="TestService.IService1, TestService"
     Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf" %>
+
+	Server=f0d12227-5ab7-490e-9ada-a22a006a5535.sqlserver.sequelizer.com;
+	Database=dbf0d122275ab7490e9adaa22a006a5535;
+	User ID=fkqthqtfcmlfsadm;
+	Password=HbBUHUSRZx55etFJTjTvdtDiJ2QpixgzKsNHyrTAP534SXgT6YAFqTzoEsjQeBGB;

@@ -1,18 +1,18 @@
 ﻿using System.Configuration;
-using System.Data.Entity;
 using Autofac;
 using Autofac.Integration.Wcf;
 using Ojb.DataModules.Security.Contract.Repository;
 using Ojb.DataModules.Security.Provider.Context;
 using Ojb.DataModules.Security.Provider.Repository;
-using Ojb.DomainServices.Contract.Services;
 using Ojb.DomainServices.Library.ServiceImp;
 using Ojb.Framework.Common.Logger;
-using Ojb.Framework.Domain.Interfaces;
-using Ojb.Framework.EntityFrameworkProvider.Repository;
 
 namespace Ojb.DomainServices.Library.Bootstrapper
 {
+    using Ojb.DataModules.Product.Contract.Repository;
+    using Ojb.DataModules.Product.Provider.Context;
+    using Ojb.DataModules.Product.Provider.Repository;
+
     /// <summary>
     /// The autofac configuration.
     /// </summary>
@@ -33,12 +33,6 @@ namespace Ojb.DomainServices.Library.Bootstrapper
         ///     AUTOFAC builder.
         /// </summary>
         private readonly ContainerBuilder builder = new ContainerBuilder();
-
-        /// <summary>
-        ///     The <see cref="IComponentContext" /> from which services
-        ///     should be located.
-        /// </summary>
-        private IContainer container;
 
         #endregion
 
@@ -81,8 +75,9 @@ namespace Ojb.DomainServices.Library.Bootstrapper
         private void RegisterServicesImp()
         {
             // registering all things needed for building data context
-            // this.builder.RegisterType<AccountService>().As<IAccountService>();
             builder.RegisterType<AccountService>();
+            builder.RegisterType<ProductService>();
+            builder.RegisterType<SecurityService>();
         }
 
         /// <summary>
@@ -91,26 +86,23 @@ namespace Ojb.DomainServices.Library.Bootstrapper
         private void RegisterProvider()
         {
             // registering all things needed for building data context
-            // builder.RegisterInstance(new SecurityDbContext("SecurityConnection")).AsSelf();
 
-            string connStr =
+            var securityConnStr =
                 ConfigurationManager.ConnectionStrings["SecurityConnection"].ConnectionString;
 
-            this.builder.RegisterInstance(new SecurityDbContext(connStr)).AsSelf();
+            var productConnStr =
+                ConfigurationManager.ConnectionStrings["ProductConnection"].ConnectionString;
 
-            //this.builder.RegisterGeneric(typeof(SecurityRepository<>))
-            //    .As(typeof(ISecurityRepository<>))
-            //    .WithParameter((pi, c) => pi.ParameterType == typeof(System.Data.Entity.DbContext),
-            //                   (pi, c) => c.Resolve<SecurityDbContext>());
-
-
-            //this.builder.RegisterGeneric(typeof(RepositoryBase<>)).As(typeof(IRepositoryBase<>))
-            //.WithParameter((pi, c) => pi.ParameterType == typeof(System.Data.Entity.DbContext),
-            //               (pi, c) => c.Resolve<SecurityDbContext>());
+            this.builder.RegisterInstance(new SecurityDbContext(securityConnStr)).AsSelf();
+            this.builder.RegisterInstance(new ProductDbContext(productConnStr)).AsSelf();
 
             this.builder.RegisterGeneric(typeof(SecurityRepository<>)).As(typeof(ISecurityRepository<>))
             .WithParameter((pi, c) => pi.ParameterType == typeof(System.Data.Entity.DbContext),
                            (pi, c) => c.Resolve<SecurityDbContext>());
+
+            this.builder.RegisterGeneric(typeof(ProductRepository<>)).As(typeof(IProductRepository<>))
+            .WithParameter((pi, c) => pi.ParameterType == typeof(System.Data.Entity.DbContext),
+                           (pi, c) => c.Resolve<ProductDbContext>());
         }
 
         #endregion

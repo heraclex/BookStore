@@ -177,14 +177,36 @@ namespace WebApp.AutofacConfiguration
 
             //******************************************************************/
 
-            this.builder.Register(c => new ChannelFactory<IAccountService>(
-               new CustomBinding("customOverHttps"),
-               new EndpointAddress(ConfigurationManager.AppSettings["endpoint"])))
-             .SingleInstance();
+            //this.builder.Register(c => new ChannelFactory<IAccountService>(
+            //   new CustomBinding("customOverHttps"),
+            //   new EndpointAddress(ConfigurationManager.AppSettings["endpoint"])))
+            // .SingleInstance();
             
+            //this.builder
+            //  .Register(c => c.Resolve<ChannelFactory<IAccountService>>().CreateChannel())
+            //  .InterceptTransparentProxy(typeof(IAccountService))
+            //  .InterceptedBy(typeof(CastleLogCallInterceptor))
+            //  .UseWcfSafeRelease();
+
+            this.builder.Register(c => new ChannelFactory<ISecurityService>(
+               new CustomBinding("customOverHttps"),
+               new EndpointAddress(ConfigurationManager.AppSettings["SecurityEndpoint"])))
+             .SingleInstance();
+
             this.builder
-              .Register(c => c.Resolve<ChannelFactory<IAccountService>>().CreateChannel())
-              .InterceptTransparentProxy(typeof(IAccountService))
+              .Register(c => c.Resolve<ChannelFactory<ISecurityService>>().CreateChannel())
+              .InterceptTransparentProxy(typeof(ISecurityService))
+              .InterceptedBy(typeof(CastleLogCallInterceptor))
+              .UseWcfSafeRelease();
+
+            this.builder.Register(c => new ChannelFactory<IProductService>(
+               new CustomBinding("customOverHttps"),
+               new EndpointAddress(ConfigurationManager.AppSettings["ProductEndpoint"])))
+             .SingleInstance();
+
+            this.builder
+              .Register(c => c.Resolve<ChannelFactory<IProductService>>().CreateChannel())
+              .InterceptTransparentProxy(typeof(IProductService))
               .InterceptedBy(typeof(CastleLogCallInterceptor))
               .UseWcfSafeRelease();
         }

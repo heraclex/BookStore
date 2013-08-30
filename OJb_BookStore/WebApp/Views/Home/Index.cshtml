@@ -46,12 +46,22 @@
     </li>
 </ol>
 
-<div>
+<div style="background: indianred">
     @{
-        foreach (var acc in Model.AccountList)
+        foreach (var acc in Model.EmployeeInfoList)
         {
             <h5>@acc.UserName</h5>
-                @acc.UserName
+            @acc.UserName
+        }
+    }
+</div>
+
+<div style="background: grey">
+    @{
+        foreach (var acc in Model.ProductInfoList)
+        {
+            <h5>@acc.Description</h5>
+                @acc.UnitPrice
         }
     }
 </div>

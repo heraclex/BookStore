@@ -43,8 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MessageModels\AccountInfo.cs" />
+    <Compile Include="MessageModels\CategoryInfo.cs" />
+    <Compile Include="MessageModels\EmployeeInfo.cs" />
+    <Compile Include="MessageModels\OrderInfo.cs" />
+    <Compile Include="MessageModels\ProductInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IAccountService.cs" />
+    <Compile Include="Services\IProductService.cs" />
+    <Compile Include="Services\ISecurityService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\Ojb.Framework.ServiceBase\Ojb.Framework.ServiceBase.csproj">

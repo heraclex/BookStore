@@ -51,12 +51,12 @@ namespace Ojb.DataModules.Product.Provider.Context
         /// <summary>
         /// Gets or sets the order.
         /// </summary>
-        public DbSet<Order> Order { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         /// <summary>
         /// Gets or sets the order detail.
         /// </summary>
-        public DbSet<OrderDetail> OrderDetail { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
         /// <summary>
         /// The on model creating.

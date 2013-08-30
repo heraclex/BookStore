@@ -60,8 +60,18 @@
     <Compile Include="ServiceConfiguration\DependencyInjectionInstanceProvider.cs" />
     <Compile Include="ServiceImp\AccountService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceImp\ProductService.cs" />
+    <Compile Include="ServiceImp\SecurityService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DataModules\Product\Ojb.DataModules.Product.Contract\Ojb.DataModules.Product.Contract.csproj">
+      <Project>{03BE6E2A-EB31-48D7-9B9B-0C652A2EB4E7}</Project>
+      <Name>Ojb.DataModules.Product.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataModules\Product\Ojb.DataModules.Product.Provider\Ojb.DataModules.Product.Provider.csproj">
+      <Project>{941A0876-E7BE-4E80-BEFD-F00E7E49CB5A}</Project>
+      <Name>Ojb.DataModules.Product.Provider</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\DataModules\Security\Ojb.DataModules.Security.Contract\Ojb.DataModules.Security.Contract.csproj">
       <Project>{c6f81540-c6a7-43fa-b411-8b97056852f6}</Project>
       <Name>Ojb.DataModules.Security.Contract</Name>

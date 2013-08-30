@@ -24,6 +24,7 @@ namespace Ojb.DataModules.Product.Mapping.Mappings
         public ProductMapping()
         {
             this.ToTable("Product");
+            this.Property(x => x.Id).HasColumnName("ProductId");
             this.Property(x => x.Description);
             this.Property(x => x.ImagePath);
             this.Property(x => x.UnitPrice);

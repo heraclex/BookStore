@@ -6,6 +6,8 @@ namespace WebApp.ViewModel
 {
     public class HomeVM
     {
-        public IEnumerable<AccountInfo> AccountList { get; set; }
+        public IEnumerable<EmployeeInfo> EmployeeInfoList { get; set; }
+
+        public IEnumerable<ProductInfo> ProductInfoList { get; set; }
     }
 }
