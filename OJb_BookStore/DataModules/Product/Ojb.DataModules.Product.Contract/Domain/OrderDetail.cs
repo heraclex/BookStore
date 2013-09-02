@@ -8,7 +8,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-
+using System.ComponentModel.DataAnnotations;
 using Ojb.Framework.Domain.Entity;
 
 namespace Ojb.DataModules.Product.Contract.Domain
@@ -31,7 +31,8 @@ namespace Ojb.DataModules.Product.Contract.Domain
         /// <summary>
         /// Gets or sets the unit price.
         /// </summary>
-        public virtual double UnitPrice { get; set; }
+        [DataType(DataType.Currency)]
+        public virtual decimal UnitPrice { get; set; }
 
         /// <summary>
         /// Gets or sets the quantity.
@@ -41,6 +42,7 @@ namespace Ojb.DataModules.Product.Contract.Domain
         /// <summary>
         /// Gets or sets the discount.
         /// </summary>
-        public virtual float Discount { get; set; }
+        [DataType(DataType.Currency)]
+        public virtual decimal? Discount { get; set; }
     }
 }

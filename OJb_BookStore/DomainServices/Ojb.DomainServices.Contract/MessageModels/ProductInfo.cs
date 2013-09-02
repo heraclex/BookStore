@@ -1,25 +1,52 @@
-﻿
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ProductInfo.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The product info.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
+using System.Runtime.Serialization;
+
 namespace Ojb.DomainServices.Contract.MessageModels
 {
-    using System.Collections.Generic;
-    using System.Runtime.Serialization;
-
+    /// <summary>
+    /// The product info.
+    /// </summary>
     [DataContract]
     public class ProductInfo
     {
-        [DataMember]
-        public int Id;
+        /// <summary>
+        /// The category.
+        /// </summary>
+        [DataMember] 
+        public CategoryInfo Category;
 
-        [DataMember]
+        /// <summary>
+        /// The description.
+        /// </summary>
+        [DataMember] 
         public string Description;
 
-        [DataMember]
+        /// <summary>
+        /// The id.
+        /// </summary>
+        [DataMember] 
+        public int Id;
+
+        /// <summary>
+        /// The image path.
+        /// </summary>
+        [DataMember] 
         public string ImagePath;
 
-        [DataMember]
-        public double UnitPrice;
-
-        [DataMember]
-        public CategoryInfo Category;
+        /// <summary>
+        /// The unit price.
+        /// </summary>
+        [DataMember] 
+        public decimal UnitPrice;
     }
 }

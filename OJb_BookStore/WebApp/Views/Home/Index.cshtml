@@ -50,18 +50,19 @@
     @{
         foreach (var acc in Model.EmployeeInfoList)
         {
-            <h5>@acc.UserName</h5>
-            @acc.UserName
+            <h5>Fisrt Name: </h5> @acc.FisrtName
+            <h5>Last Name: </h5> @acc.LastName
+            <h5>Password: </h5> @acc.Password
         }
     }
 </div>
 
 <div style="background: grey">
     @{
-        foreach (var acc in Model.ProductInfoList)
+        foreach (var pro in Model.ProductInfoList)
         {
-            <h5>@acc.Description</h5>
-                @acc.UnitPrice
+            <h5>@pro.Description</h5>
+                @pro.UnitPrice
         }
     }
 </div>

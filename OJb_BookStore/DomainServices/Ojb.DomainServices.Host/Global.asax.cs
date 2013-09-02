@@ -23,10 +23,11 @@ namespace Ojb.DomainServices.Host
         /// </summary>
         protected void Application_Start(object sender, EventArgs e)
         {
+            LogManager.Initialize();
+
             // https://code.google.com/p/autofac/source/browse/Examples/MultitenantExample.WcfService/Global.asax.cs
             var bootStart = new AutofacConfiguration();
             bootStart.DoStart();
-            LogManager.Initialize();
         }
 
         protected void Session_Start(object sender, EventArgs e)
