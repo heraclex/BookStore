@@ -1,6 +1,6 @@
 ﻿
 using System.Collections.Generic;
-using Ojb.DomainServices.Contract.MessageModels;
+using Ojb.DomainServices.Contract.MessageModels.Response;
 
 namespace WebApp.ViewModel
 {

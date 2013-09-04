@@ -9,7 +9,7 @@
 
 using Ojb.DataModules.Security.Contract.Domain;
 using Ojb.DataModules.Security.Contract.Repository;
-using Ojb.DomainServices.Contract.MessageModels;
+using Ojb.DomainServices.Contract.MessageModels.Response;
 
 namespace Ojb.DomainServices.Library.Managers
 {

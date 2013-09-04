@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Ojb.DataModules.Product.Contract.Domain;
 using Ojb.DataModules.Product.Contract.Repository;
-using Ojb.DomainServices.Contract.MessageModels;
+using Ojb.DomainServices.Contract.MessageModels.Response;
 using Ojb.DomainServices.Contract.Services;
 using Ojb.Framework.ServiceBase.Imps;
 

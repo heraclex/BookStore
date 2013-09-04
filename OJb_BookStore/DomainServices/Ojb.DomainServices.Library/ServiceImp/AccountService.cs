@@ -12,7 +12,7 @@
 using System.Collections.Generic;
 using Ojb.DataModules.Security.Contract.Domain;
 using Ojb.DataModules.Security.Contract.Repository;
-using Ojb.DomainServices.Contract.MessageModels;
+using Ojb.DomainServices.Contract.MessageModels.Response;
 using Ojb.DomainServices.Contract.Services;
 using Ojb.Framework.ServiceBase.Imps;
 

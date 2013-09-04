@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.ServiceModel;
 
-    using Ojb.DomainServices.Contract.MessageModels;
+    using Ojb.DomainServices.Contract.MessageModels.Response;
     using Ojb.Framework.ServiceBase.Contracts;
 
     [ServiceContract]

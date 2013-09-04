@@ -42,11 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MessageModels\AccountInfo.cs" />
-    <Compile Include="MessageModels\CategoryInfo.cs" />
-    <Compile Include="MessageModels\EmployeeInfo.cs" />
-    <Compile Include="MessageModels\OrderInfo.cs" />
-    <Compile Include="MessageModels\ProductInfo.cs" />
     <Compile Include="MessageModels\Request\UserInfomation.cs" />
     <Compile Include="MessageModels\Response\AccountInfo.cs" />
     <Compile Include="MessageModels\Response\CategoryInfo.cs" />
