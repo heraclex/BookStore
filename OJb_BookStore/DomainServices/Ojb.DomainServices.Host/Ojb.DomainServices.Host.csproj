@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ojb.DomainServices.Host</RootNamespace>
-    <AssemblyName>OjbAswig.DomainServices.Host</AssemblyName>
+    <AssemblyName>Ojb.DomainServices.Host</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
