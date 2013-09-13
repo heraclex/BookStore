@@ -71,7 +71,7 @@ namespace Ojb.DomainServices.Library.ServiceImp
             {
                 return new LoginResult
                     {
-                        IsSuccess = true, 
+                        IsSuccess = false, 
                         InvalidLoginInfo = new KeyValuePair<LoginResult.InvalidLoginType, string>(LoginResult.InvalidLoginType.InvalidUsernameOrPassword, "Invalid login. Please try again.")
                     };
             }
