@@ -12,5 +12,8 @@ namespace Ojb.DomainServices.Contract.Services
     {
         [OperationContract]
         IEnumerable<EmployeeInfo> GetAllEmployeeInfo();
+
+        [OperationContract]
+        LoginResult Login(string username, string password);
     }
 }

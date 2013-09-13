@@ -18,7 +18,7 @@ namespace Ojb.DomainServices.Contract.MessageModels.Response
     /// The account info.
     /// </summary>
     [DataContract]
-    public class AccountInfo : ResponseBase
+    public class AccountInfo // : ResponseBase
     {
         /// <summary>
         /// The fisrt name.

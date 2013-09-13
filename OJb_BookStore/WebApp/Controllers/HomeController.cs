@@ -7,7 +7,7 @@
 
     /// <summary>
     /// </summary>
-    public class HomeController : Controller
+    public class HomeController : OjbControllerBase
     {
         private readonly IHomeVMBuilder homeVMBuilder = null;
 

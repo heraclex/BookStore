@@ -64,6 +64,35 @@ namespace Ojb.DomainServices.Library.ServiceImp
                         });
         }
 
+        public LoginResult Login(string username, string password)
+        {
+            var account = this.SecurityUserRepository.Query<User>(x => x.UserName == username && x.Password == password).FirstOrDefault();
+            if (account == null)
+            {
+                return new LoginResult
+                    {
+                        IsSuccess = true, 
+                        InvalidLoginInfo = new KeyValuePair<LoginResult.InvalidLoginType, string>(LoginResult.InvalidLoginType.InvalidUsernameOrPassword, "Invalid login. Please try again.")
+                    };
+            }
+
+            var acountInfomation = account.CustomerInfomations.FirstOrDefault();
+
+            return new LoginResult
+                {
+                    IsSuccess = true,
+                    AccountInfo = new AccountInfo
+                        {
+                            Id = account.Id,
+                            FisrtName = acountInfomation != null ? acountInfomation.FirstName : string.Empty,
+                            LastName = acountInfomation != null ? acountInfomation.LastName : string.Empty,
+                            UserName = account.UserName,
+                            Password = account.Password,
+                            PhoneNumber = acountInfomation != null ? acountInfomation.PhoneNumber : string.Empty,
+                        }
+                };
+        }
+
         #endregion
     }
 }

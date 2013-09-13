@@ -1,0 +1,61 @@
+﻿@model WebApp.ViewModel.LoginVM
+@{
+    this.ViewBag.Title = "Civica Cx " + this.Model.EnvironmentName;
+    this.Layout = "~/Views/Shared/LayoutDefault.cshtml";
+}
+
+<header>
+    <h1 class="normal-text">@this.Model.OrganizationName - @this.Model.EnvironmentName</h1>
+</header>
+
+<div id="resultDialog">
+</div>
+
+<section id="login">
+    @using (this.Html.BeginForm("Index", "Login", FormMethod.Post, new { id = "loginForm", defaultfocus = "submit-login" }))
+    {
+        <div id ="Username">
+            @this.Html.LabelFor(d => d.LoginModel.UserName)
+            @this.Html.TextBoxFor(d => d.LoginModel.UserName, new { tabindex = 1 })
+        </div>
+        <div id ="Password">
+            @this.Html.LabelFor(d => d.LoginModel.Password)
+            @this.Html.TextBoxFor(d => d.LoginModel.Password, new { tabindex = 1 })
+        </div>
+        this.Html.ValidationMessageFor(d => d.LoginModel.Password);
+        <div id="resultLogin" class="clearfix error-text">@this.Model.Message</div>
+        <div class="clearfix">
+            <input type="submit" name="submit-login" id="submit-login" class=" active-background" value="Login" />
+        </div>
+    }
+    
+
+    @*<div class="box-login accent-colour-background">
+        <div class="box-login-inner">
+            <div class="login-title normal-text">Login</div>
+            <a href="javascript:void(0);" class="help-link" title="@this.Model.AssistanceText">Help</a>
+            <div class="submit-form clearfix">
+                @using (this.Html.BeginForm("Index", "Login", FormMethod.Post, new { id = "loginForm", defaultfocus = "submit-login" })) {
+                    <div class="clearfix">
+                        @this.Html.LabelFor(d => d.LoginModel.UserName)
+                        @this.Html.TextBoxFor(d => d.LoginModel.UserName, new { tabindex = 1 })
+                    </div>
+                    this.Html.ValidationMessageFor(d => d.LoginModel.UserName);
+                    <div class="clearfix">
+                        @this.Html.LabelFor(d => d.LoginModel.Password)
+                        @this.Html.PasswordFor(d => d.LoginModel.Password, new { tabindex = 2 })
+                    </div>
+                    this.Html.ValidationMessageFor(d => d.LoginModel.Password);
+                    <div id="resultLogin" class="clearfix error-text">@this.Model.Message</div>
+                    <div class="clearfix">
+                        <input type="submit" name="submit-login" id="submit-login" class=" active-background" value="Login" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>*@
+</section>
+@this.Html.HiddenFor(model => model.AutoLoginErrorMessage)
+<footer class="body-background clearfix">
+    @this.Html.Partial("FooterPartial")
+</footer>

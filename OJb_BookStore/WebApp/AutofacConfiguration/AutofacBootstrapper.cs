@@ -27,6 +27,8 @@ namespace WebApp.AutofacConfiguration
     using System.ServiceModel;
     using System.Configuration;
     using System.ServiceModel.Channels;
+
+    using WebApp.Security;
     using WebApp.ServiceProvider;
 
     /// <summary>
@@ -96,6 +98,8 @@ namespace WebApp.AutofacConfiguration
 
             // Register all controller class
             this.RegisterViewModelAndControllers();
+
+            this.RegisterSecurityService();
         }
 
         /// <summary>
@@ -211,6 +215,12 @@ namespace WebApp.AutofacConfiguration
               .UseWcfSafeRelease();
         }
         
+        private void RegisterSecurityService()
+        {
+            this.builder.RegisterType(typeof(OjbMemberShipProvider)).As<IOjbMemberShipProvider>();
+            this.builder.RegisterType(typeof(FormsAuthenticationService)).As<IFormsAuthenticationService>();
+        }
+
         #endregion
     }
 }

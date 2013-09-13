@@ -46,6 +46,7 @@
     <Compile Include="MessageModels\Response\AccountInfo.cs" />
     <Compile Include="MessageModels\Response\CategoryInfo.cs" />
     <Compile Include="MessageModels\Response\EmployeeInfo.cs" />
+    <Compile Include="MessageModels\Response\LoginResponse.cs" />
     <Compile Include="MessageModels\Response\OrderInfo.cs" />
     <Compile Include="MessageModels\Response\ProductInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

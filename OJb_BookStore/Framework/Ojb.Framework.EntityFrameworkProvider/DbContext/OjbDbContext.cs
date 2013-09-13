@@ -74,22 +74,28 @@ namespace Ojb.Framework.EntityFrameworkProvider.DbContext
         protected OjbDbContext(string connectionString)
             : base(CreateTracingConnection(connectionString), true)
         {
-            // Only for debug mode
-            // if (log.IsDebugEnabled)
-            // {
-                ObjectContext cx = ((IObjectContextAdapter) this).ObjectContext;
-                cx.EnableTracing();
+            try
+            {
+                if (log.IsDebugEnabled)
+                {
+                    ObjectContext cx = ((IObjectContextAdapter)this).ObjectContext;
+                    cx.EnableTracing();
 
-                IEnumerable<EFTracingConnection> traceConnections = cx.Connection.GetTracingConnections();
-                var myList = new List<EFTracingConnection>(traceConnections);
-                myList.ForEach(
-                    c =>
-                        {
-                            c.CommandExecuting += (s, e) => LogSql(e, CommandState.CommandExecuting);
-                            c.CommandFailed += (s, e) => LogSql(e, CommandState.CommandFailed);
-                            c.CommandFinished += (s, e) => LogSql(e, CommandState.CommandFinished);
-                        });
-            // }
+                    IEnumerable<EFTracingConnection> traceConnections = cx.Connection.GetTracingConnections();
+                    var myList = new List<EFTracingConnection>(traceConnections);
+                    myList.ForEach(
+                        c =>
+                            {
+                                c.CommandExecuting += (s, e) => LogSql(e, CommandState.CommandExecuting);
+                                c.CommandFailed += (s, e) => LogSql(e, CommandState.CommandFailed);
+                                c.CommandFinished += (s, e) => LogSql(e, CommandState.CommandFinished);
+                            });
+                }
+            }
+            catch(Exception ex)
+            {
+                this.log.Error(ex.ToString());
+            }
         }
         
         /// <summary>
