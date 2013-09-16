@@ -24,6 +24,7 @@ namespace Ojb.DataModules.Security.Mapping.Mappings
         /// </summary>
         public UserProfileMapping()
         {
+            this.ToTable("UserProfile");
             this.Property(x => x.FirstName);
             this.Property(x => x.LastName);
             this.Property(x => x.MiddleName);
