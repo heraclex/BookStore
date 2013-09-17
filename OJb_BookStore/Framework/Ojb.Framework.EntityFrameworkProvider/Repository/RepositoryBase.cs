@@ -146,14 +146,14 @@ namespace Ojb.Framework.EntityFrameworkProvider.Repository
         /// </returns>
         public virtual T SaveOrUpdate(T entity)
         {
-            if (entity == null)
-                return null;
+            //if (entity == null)
+            //    return null;
 
-            if (entity.IsTransient())
-                _dbContext.Set<T>().Add(entity);
+            //if (entity.IsTransient())
+            //    _dbContext.Set<T>().Add(entity);
 
-            // _dbContext.SaveChanges();
-            return entity;
+            //// _dbContext.SaveChanges();
+            //return entity;
         }
 
         /// <summary>
@@ -221,6 +221,27 @@ namespace Ojb.Framework.EntityFrameworkProvider.Repository
             }
         }
 
+        #endregion
+
+        #region Queryable
+
+        public TResult Execute<TResult>(Func<IDbContextCore, TResult> action)
+        {
+            if (action == null)
+            {
+                throw new ArgumentNullException("action");
+            }
+
+            try
+            {
+                return action(this.DbContext);
+            }
+            catch (Exception ex)
+            {
+                // this.TranslateException(ex);
+                throw;
+            }
+        }
         #endregion
     }
 }
