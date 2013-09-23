@@ -17,6 +17,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Ojb.Framework.Domain.Interfaces;
 using Ojb.Framework.EntityFrameworkProvider.DbContext;
+using Ojb.Framework.EntityFrameworkProvider.QueryExtension;
 
 namespace Ojb.Framework.EntityFrameworkProvider.Repository
 {
@@ -146,14 +147,14 @@ namespace Ojb.Framework.EntityFrameworkProvider.Repository
         /// </returns>
         public virtual T SaveOrUpdate(T entity)
         {
-            //if (entity == null)
-            //    return null;
+            if (entity == null)
+                return null;
 
-            //if (entity.IsTransient())
-            //    _dbContext.Set<T>().Add(entity);
+            if (entity.IsTransient())
+                _dbContext.Set<T>().Add(entity);
 
             //// _dbContext.SaveChanges();
-            //return entity;
+            return entity;
         }
 
         /// <summary>
@@ -203,6 +204,24 @@ namespace Ojb.Framework.EntityFrameworkProvider.Repository
         public IQueryable<T> Query<T>(Expression<Func<T, bool>> @where)
         {
             return ((IQueryable<T>) _dbContext.Set(typeof (T))).Where(@where);
+        }
+
+        /// <summary>
+        /// Query method will return IQueryable to Repository.
+        /// </summary>
+        /// <param name="where">
+        /// Where condition on Entity.
+        /// </param>
+        /// <typeparam name="T">
+        /// T Entity : conrete class
+        /// </typeparam>
+        /// <returns>
+        /// IQueryable base on T Entity
+        /// </returns>
+        public IQueryable<T> Query<T>(QueryInfo<T> queryInfo)
+        {
+            return null;
+            //return ((IQueryable<T>)_dbContext.Set(typeof(T))).Where(@where);
         }
 
         /// <summary>

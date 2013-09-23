@@ -56,6 +56,8 @@
     <Compile Include="Contract\IRepository.cs" />
     <Compile Include="DbContext\DbContextCore.cs" />
     <Compile Include="DbContext\OjbDbContext.cs" />
+    <Compile Include="QueryExtension\OrderBySelector.cs" />
+    <Compile Include="QueryExtension\QueryInfo.cs" />
     <Compile Include="Validator\EntityDuplicateChecker.cs" />
     <Compile Include="Module\IProviderModule.cs" />
     <Compile Include="Module\ProviderModuleBase.cs" />

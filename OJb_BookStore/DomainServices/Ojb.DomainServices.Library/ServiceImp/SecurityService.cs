@@ -11,6 +11,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using Ojb.DataModules.Security.Contract.Domain;
 using Ojb.DataModules.Security.Contract.Repository;
 using Ojb.DomainServices.Contract.MessageModels.Response;
@@ -66,7 +67,9 @@ namespace Ojb.DomainServices.Library.ServiceImp
 
         public LoginResult Login(string username, string password)
         {
-            var account = this.SecurityUserRepository.Query<User>(x => x.UserName == username && x.Password == password).FirstOrDefault();
+            var account = this.SecurityUserRepository
+                .Query<User>(x => x.UserName == username && x.Password == password)
+                .Include(c => c.CustomerInfomations).FirstOrDefault();
             if (account == null)
             {
                 return new LoginResult
