@@ -33,6 +33,7 @@
         </header>
         <div id="body">
             @RenderSection("featured", required: false)
+            @Html.Hidden("Root Url", String.Format("{0}://{1}{2}",Request.Url.Scheme, Request.Url.Authority,Url.Content("~/")), new {id = "rootUrl"})
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
             </section>

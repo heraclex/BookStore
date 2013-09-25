@@ -1,0 +1,22 @@
+﻿@model WebApp.ViewModel.DemoAndLabVM
+@{
+    this.ViewBag.Title = "NerverLand UK";
+    this.Layout = "~/Views/Shared/LayoutDefault.cshtml";
+}
+
+@*@using (Html.BeginForm("SubmitList", "DemoAndLab", FormMethod.Post, new {id = "form-submit-list"}))
+{
+    <div id="popup" width="100%">
+        @Html.DropDownListFor(model => model.ListDemo, new SelectList(Model.ListDemo, "key", "key"), new {id = "List1"})
+        @Html.DropDownListFor(model => model.ListDemo, new SelectList(Model.ListDemo, "key", "value"), new {id = "List2"})
+    </div>
+}*@
+
+<div id="container"></div>
+<input type="button" name="btnShowPopup" id="btnShowPopup" value="Show Popup"/>
+<input type="button" name="btnHidePopup" id="btnHidePopup" value="Hide Popup"/>
+<script>
+    $(document).ready(function() {
+        Ojb.DemoAndLab.init();
+    });
+</script>

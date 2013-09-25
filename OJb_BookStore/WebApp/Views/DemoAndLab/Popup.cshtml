@@ -1,0 +1,6 @@
+﻿@model WebApp.ViewModel.DemoAndLabVM
+
+<div id="popup" width="100%">
+        @Html.DropDownListFor(model => model.ListDemo, new SelectList(Model.ListDemo, "key", "key"), new {id = "List1"})
+        @Html.DropDownListFor(model => model.ListDemo, new SelectList(Model.ListDemo, "key", "value"), new {id = "List2"})
+</div>
