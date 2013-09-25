@@ -87,7 +87,7 @@
         },
 
         getRootUrl: function () {
-            var rootUrl = Helpers.rootUrl;
+            var rootUrl = Helpers.rootUrl();
             if (/\/.+/.test(rootUrl)) {
                 rootUrl = rootUrl + this.SLASH;
             }
