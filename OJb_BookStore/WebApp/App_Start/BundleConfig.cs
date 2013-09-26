@@ -47,7 +47,8 @@ namespace WebApp
             bundles.Add(new ScriptBundle("~/bundles/pages").Include(
                         "~/Scripts/Classes/Core/ojb.helper.js",
                         "~/Scripts/Classes/Login/ojb.login.js",
-                        "~/Scripts/Classes/DemoAndLab/ojb.demoandlab.js"));
+                        "~/Scripts/Classes/DemoAndLab/ojb.demoandlab.js",
+                        "~/Scripts/Classes/DemoAndLab/ojb.namespace.classname.js"));
         }
     }
 }
