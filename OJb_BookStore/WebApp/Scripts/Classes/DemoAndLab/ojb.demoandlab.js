@@ -11,6 +11,7 @@
         registerEvent: function () {
             $('#btnShowPopup').click(Ojb.DemoAndLab.showPopup);
             $('#btnHidePopup').click(Ojb.DemoAndLab.hidePopup);
+            $('#btnSunmit').click(Ojb.DemoAndLab.submit);
         },
         
         showPopup: function () {
@@ -89,6 +90,38 @@
             // triger to List 1 if List 2 change
             $('#List1').val(value2).trigger('change');
         },
+        
+        submit: function () {
+            var persons = new Array();
+            var ids = new Array();
+            var names = new Array();
+            for (var i = 0; i < 2; i++) {
+                ids.push(i);
+                names.push("person: " + i);
+                persons.push({ ids: i, name: "person: " + i });
+            }
 
+            var demo = {
+                Persons: persons,
+                Ids: ids,
+                //Names: names,
+                Description: "demo",
+                aaa: "sdasdadasds"
+            };
+            Helpers.ajaxHelper.postJson({
+                    url: Helpers.resolveUrl("DemoAndLab/Submit"),
+                async: false,
+                cache: false,
+                // contentType: 'application/json',
+                data: demo,
+                success: function() {
+                    alert('sucess');
+                },
+                error: function() {
+                    alert('fail');
+                }
+            });
+        }
     };
 })(jQuery, window.Ojb = window.Ojb || {});
+

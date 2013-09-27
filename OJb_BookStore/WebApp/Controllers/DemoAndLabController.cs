@@ -1,5 +1,6 @@
 ﻿using System.Web.Helpers;
 using System.Web.Mvc;
+using WebApp.Models;
 using WebApp.ViewModel;
 
 namespace WebApp.Controllers
@@ -28,5 +29,15 @@ namespace WebApp.Controllers
         {
             return PartialView(new DemoAndLabVM());
         }
+
+        public JsonResult Submit(DemoLabModel jsonObject)
+        {
+            return new JsonResult
+            {
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                Data = new { mess = "123" }
+            };
+        }
+
     }
 }

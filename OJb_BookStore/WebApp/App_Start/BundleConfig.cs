@@ -29,6 +29,9 @@ namespace WebApp
 
         private static void RegisterScripts(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/JSON").Include(
+                        "~/Scripts/json2.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 

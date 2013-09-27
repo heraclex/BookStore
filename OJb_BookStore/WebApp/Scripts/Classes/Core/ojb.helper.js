@@ -70,6 +70,7 @@
 
     //Core functions
     Helpers.AjaxCore = Helpers.extend({
+        JSONCONTENTTYPE: 'application/json',
         JSON: 'json',
         HTML: 'html',
         POST: 'POST',
@@ -123,10 +124,11 @@
 
             $.ajax({
                 url: url,
-                data: options.data,
+                data: JSON.stringify(options.data),
                 dataType: options.dataType,
                 type: options.type,
                 cache: options.cache,
+                contentType: options.contentType,
                 async: async,
                 traditional: traditional,
                 context: this,
@@ -162,6 +164,7 @@
         //send ajax request with data in JSON format and GET verb
         getJson: function (options) {
             var defaultOptions = {
+                contentType: this.JSONCONTENTTYPE,
                 dataType: this.JSON,
                 type: this.GET
             };
@@ -172,6 +175,7 @@
         //send ajax request with data in JSON format and POST verb
         postJson: function (options) {
             var defaultOptions = {
+                contentType: this.JSONCONTENTTYPE,
                 dataType: this.JSON,
                 type: this.POST
             };
