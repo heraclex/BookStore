@@ -282,9 +282,9 @@
     <Content Include="Scripts\Classes\Core\ojb.helper.js" />
     <Content Include="Scripts\Classes\DemoAndLab\ojb.demoandlab.js" />
     <Content Include="Scripts\Classes\DemoAndLab\ojb.namespace.classname.js" />
-    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.7.1.js" />
-    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -348,6 +348,7 @@
     <Content Include="Scripts\Classes\Login\ojb.login.js" />
     <Content Include="Views\DemoAndLab\Index.cshtml" />
     <Content Include="Views\DemoAndLab\Popup.cshtml" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

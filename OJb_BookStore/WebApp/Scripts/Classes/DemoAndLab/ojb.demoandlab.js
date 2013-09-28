@@ -108,12 +108,13 @@
                 Description: "demo",
                 aaa: "sdasdadasds"
             };
+
+            var aaa = $(demo).serializeJson();  //$('#formData').serializeJson();
             Helpers.ajaxHelper.postJson({
-                    url: Helpers.resolveUrl("DemoAndLab/Submit"),
+                url: Helpers.resolveUrl("DemoAndLab/Submit"),
                 async: false,
                 cache: false,
-                // contentType: 'application/json',
-                data: demo,
+                data: Helpers.dataHelper.serializeToJson(demo),
                 success: function() {
                     alert('sucess');
                 },
