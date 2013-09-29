@@ -283,6 +283,7 @@
     <Content Include="Scripts\Classes\DemoAndLab\ojb.demoandlab.js" />
     <Content Include="Scripts\Classes\DemoAndLab\ojb.namespace.classname.js" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\Classes\DemoAndLab\ojb.tableofcontend.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
@@ -349,6 +350,7 @@
     <Content Include="Views\DemoAndLab\Index.cshtml" />
     <Content Include="Views\DemoAndLab\Popup.cshtml" />
     <Content Include="Scripts\jquery-2.0.3.min.map" />
+    <Content Include="Views\DemoAndLab\Table.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

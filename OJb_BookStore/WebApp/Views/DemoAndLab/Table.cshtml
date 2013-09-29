@@ -1,0 +1,78 @@
+﻿@model List<WebApp.Models.PersonModel>
+@{
+    this.ViewBag.Title = "NerverLand UK";
+    this.Layout = "~/Views/Shared/LayoutDefault.cshtml";
+}
+
+<input type="button" name="btnHidePopup" id="btnSunmit" value="Submit Data"/>
+<style>
+    
+#data-table-a {
+    border: 1px solid #6699CC;
+    border-collapse: collapse;
+    font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+    font-size: 12px;
+    margin: 20px;
+    text-align: left;
+    width: 480px;
+}
+
+</style>
+
+<div id="Mock-Up" style="display: none">
+    <!-- Table markup-->
+    <table>
+        <!-- Table header -->
+        <thead>
+            <tr>
+                <th scope="col" id="...">...</th>
+            </tr>
+        </thead>
+        <!-- Table footer -->
+        <tfoot>
+            <tr>
+                <td>...</td>
+            </tr>
+        </tfoot>
+        <!-- Table body -->
+        <tbody>
+            <tr>
+                <td>...</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div id="container">
+    <!-- Table markup-->
+    <table id="data-table-a">
+	    <!-- Table header -->
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Select</th>
+            </tr>
+        </thead>
+
+	    <!-- Table body -->
+        <tbody>
+        </tbody>
+        
+	    <!-- Table footer -->
+        <tfoot>
+            <tr>
+                <td colspan="5">
+                    <em>The above data were fictional and made up, please do not sue me</em>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<script>
+    $(document).ready(function() {
+        Ojb.DemoAndLab_Table.init(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model)));
+    });
+</script>
