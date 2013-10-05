@@ -82,7 +82,8 @@
         //called when an ajax request is completed
         ajaxComplete: function () {
             if (this.mask) {
-                $.unblockUI();
+                setTimeout($.unblockUI, 2000);
+                // $.unblockUI();
                 this.mask = null;
             }
         },
@@ -117,8 +118,23 @@
                         border: 'none',
                         zIndex: 10002
                     },
-                    // message: '<img width="54" height="55" src="' + rootUrl + 'Content/Images/loader.gif" />'
+                    message: '<img width="54" height="55" src="' + this.getRootUrl() + 'Content/Images/loader.gif" />'
                 };
+
+                //this.mask = {
+                //    css: {
+                //        border: 'none',
+                //        padding: '15px',
+                //        backgroundColor: '#000',
+                //        '-webkit-border-radius': '10px',
+                //        '-moz-border-radius': '10px',
+                //        opacity: .5,
+                //        color: '#fff'
+                //    },
+                //    // message: 'Please wait ....'
+                //    message: '<img width="54" height="55" src="' + this.getRootUrl() + 'Content/Images/loader.gif" />'
+                //};
+                
                 $.blockUI(this.mask);
             }
 
