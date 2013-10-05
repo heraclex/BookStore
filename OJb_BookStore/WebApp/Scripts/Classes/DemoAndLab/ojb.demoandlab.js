@@ -111,9 +111,8 @@
 
             var aaa = $(demo).serializeJson();  //$('#formData').serializeJson();
             Helpers.ajaxHelper.postJson({
-                url: Helpers.resolveUrl("DemoAndLab/Submit"),
-                async: true,
-                cache: false,
+                controller: 'DemoAndLab',
+                action: 'Submit',
                 data: Helpers.dataHelper.serializeJson(demo),
                 showMask: true,
                 success: function () {
