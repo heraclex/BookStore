@@ -10,12 +10,12 @@
     <title>Never Land Cop</title>
     
     <!-- Bootstrap core CSS -->
-    @*@Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/themes/base/css")
-    @Styles.Render("~/Content/themes/bootstrap/css")*@
+    @Styles.Render("~/Content/themes/bootstrap/css")
 
     <!-- Custom styles for this site -->
-    @*@Styles.Render("~/Content/site/css")*@
+    @Styles.Render("~/Content/site/css")
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -24,9 +24,9 @@
     <![endif]-->
     
     
-    <link rel="stylesheet" type='text/css' href="~/_Temp/css/bootstrap.min.css" />
-	<link rel="stylesheet" type='text/css' href="~/_Temp/css/bootstrap-responsive.min.css" />
-	<link rel="stylesheet" type='text/css' href="~/_Temp/css/style.css" />
+    <link rel="stylesheet" type='text/css' href="~/content/userlayout/css/bootstrap.min.css" />
+    <link rel="stylesheet" type='text/css' href="~/content/userlayout/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" type='text/css' href="~/content/userlayout/css/style.css" />
 	<script type='text/javascript' src="~/_Temp/js/jquery-1.7.2.min.js"></script>
 	<script type='text/javascript' src="~/_Temp/js/bootstrap.min.js"></script>
 
@@ -394,11 +394,7 @@
 	</div>
 
 
-
-
-
-
-<script type='text/javascript' src="~/_temp/js/main.js"></script>
+        <script type='text/javascript' src="~/content/userlayout/js/main.js"></script>
         
 
         @RenderBody()

@@ -47,9 +47,8 @@
         submit: function () {
             var dataSubmit = Helpers.dataHelper.serializeJson(Ojb.DemoAndLab_Table.personList);
             Helpers.ajaxHelper.postJson({
-                url: Helpers.resolveUrl("DemoAndLab/SubmitList"),
-                async: false,
-                cache: false,
+                controller: 'DemoAndLab',
+                action: 'SubmitList',
                 data: dataSubmit,
                 success: function () {
                     alert('sucess');

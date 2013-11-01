@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{1AAFDCE3-CED8-46C3-A104-5FED476471C3}"
-EndProject
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{C493878C-F641-43E2-B233-C18DED75ABFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainServices", "DomainServices", "{AB531006-6879-4A45-B641-C4E882E97C30}"
@@ -20,6 +20,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServicesTest", "ServicesTest", "{A05D878D-F2AE-4B57-B15F-FE3492EB8358}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataModuleTest", "DataModuleTest", "{4F2E22D8-CAFC-4273-B546-5005CA8927C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{1AAFDCE3-CED8-46C3-A104-5FED476471C3}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BookStoreDatabaseStructure", "DatabaseSchema\BookStoreDatabaseStructure\BookStoreDatabaseStructure.sqlproj", "{E86E9850-C3CB-4F45-B501-B830D58D9E77}"
 EndProject
