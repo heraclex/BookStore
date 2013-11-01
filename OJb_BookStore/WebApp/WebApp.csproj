@@ -333,12 +333,8 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\Classes\Core\ojb.helper.js" />
-    <Content Include="Scripts\Classes\DemoAndLab\ojb.demoandlab.js" />
-    <Content Include="Scripts\Classes\DemoAndLab\ojb.namespace.classname.js" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
-    <Content Include="Scripts\Classes\DemoAndLab\ojb.tableofcontend.js" />
-    <Content Include="Scripts\Core\ojb.helper.js" />
+    <Content Include="Scripts\core\ojb.helper.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
@@ -358,6 +354,10 @@
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Log4Net.config" />
     <None Include="Properties\DataSources\Payroll.Contract.ServiceModels.AccountInfo.datasource" />
+    <Content Include="Scripts\pages\demoandlab\ojb.demoandlab.js" />
+    <Content Include="Scripts\pages\demoandlab\ojb.namespace.classname.js" />
+    <Content Include="Scripts\pages\demoandlab\ojb.tableofcontend.js" />
+    <Content Include="Scripts\pages\login\ojb.login.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -403,7 +403,6 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\LayoutDefault.cshtml" />
     <Content Include="Views\Shared\FooterPartial.cshtml" />
-    <Content Include="Scripts\Classes\Login\ojb.login.js" />
     <Content Include="Views\DemoAndLab\Index.cshtml" />
     <Content Include="Views\DemoAndLab\Popup.cshtml" />
     <Content Include="Scripts\jquery-2.0.3.min.map" />
