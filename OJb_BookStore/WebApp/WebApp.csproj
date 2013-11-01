@@ -241,7 +241,6 @@
     <Content Include="App\framework\durandal\system.js" />
     <Content Include="App\framework\durandal\viewEngine.js" />
     <Content Include="App\framework\durandal\viewLocator.js" />
-    <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\elegancy-nav-logo.png" />
@@ -329,6 +328,38 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\themes\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\userlayout\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\userlayout\css\bootstrap.min.css" />
+    <Content Include="Content\userlayout\css\style.css" />
+    <Content Include="Content\userlayout\img\elegancy-nav-logo.png" />
+    <Content Include="Content\userlayout\img\figure1.jpg" />
+    <Content Include="Content\userlayout\img\follow\followme_facebook.png" />
+    <Content Include="Content\userlayout\img\follow\followme_pinterest.png" />
+    <Content Include="Content\userlayout\img\follow\followme_tumblr.png" />
+    <Content Include="Content\userlayout\img\follow\followme_twitter.png" />
+    <Content Include="Content\userlayout\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\userlayout\img\glyphicons-halflings.png" />
+    <Content Include="Content\userlayout\img\img1.jpg" />
+    <Content Include="Content\userlayout\img\img2.jpg" />
+    <Content Include="Content\userlayout\img\img3.jpg" />
+    <Content Include="Content\userlayout\img\mainlogo.png" />
+    <Content Include="Content\userlayout\img\noise.png" />
+    <Content Include="Content\userlayout\img\noise4.png" />
+    <Content Include="Content\userlayout\img\social\blog_active.png" />
+    <Content Include="Content\userlayout\img\social\blog_dark.png" />
+    <Content Include="Content\userlayout\img\social\facebook_active.png" />
+    <Content Include="Content\userlayout\img\social\facebook_dark.png" />
+    <Content Include="Content\userlayout\img\social\flickr_active.png" />
+    <Content Include="Content\userlayout\img\social\flickr_dark.png" />
+    <Content Include="Content\userlayout\img\social\google_active.png" />
+    <Content Include="Content\userlayout\img\social\google_dark.png" />
+    <Content Include="Content\userlayout\img\social\rss_active.png" />
+    <Content Include="Content\userlayout\img\social\rss_dark.png" />
+    <Content Include="Content\userlayout\img\social\twitter02_active.png" />
+    <Content Include="Content\userlayout\img\social\twitter02_dark.png" />
+    <Content Include="Content\userlayout\js\bootstrap.min.js" />
+    <Content Include="Content\userlayout\js\jquery-1.7.2.min.js" />
+    <Content Include="Content\userlayout\js\main.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -358,6 +389,7 @@
     <Content Include="Scripts\pages\demoandlab\ojb.namespace.classname.js" />
     <Content Include="Scripts\pages\demoandlab\ojb.tableofcontend.js" />
     <Content Include="Scripts\pages\login\ojb.login.js" />
+    <Content Include="Scripts\pages\main.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -408,6 +440,7 @@
     <Content Include="Scripts\jquery-2.0.3.min.map" />
     <Content Include="Views\DemoAndLab\Table.cshtml" />
     <Content Include="Views\Shared\HeaderPartial.cshtml" />
+    <Content Include="Views\Shared\NavbarPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

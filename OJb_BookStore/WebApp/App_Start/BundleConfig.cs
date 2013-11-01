@@ -11,7 +11,7 @@ namespace WebApp
             RegisterScripts(bundles);
 
             bundles.Add(new StyleBundle("~/Content/css")
-                .Include("~/Content/bootstrap.css"));
+                .Include("~/Content/bootstrap.css", "~/Content/bootstrap-responsive.css"));
             
             bundles.Add(new StyleBundle("~/Content/themes/base/css")
                 .Include("~/Content/themes/base/jquery.ui.core.css",
@@ -27,8 +27,7 @@ namespace WebApp
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
-            bundles.Add(new StyleBundle("~/Content/themes/bootstrap/css")
-                .Include("~/Content/bootstrap/bootstrap-theme.css"));
+            bundles.Add(new StyleBundle("~/Content/themes/bootstrap/css").Include("~/Content/bootstrap/bootstrap-theme.css"));
 
             bundles.Add(new StyleBundle("~/Content/site/css").Include("~/Content/site.css"));
         }
@@ -58,11 +57,12 @@ namespace WebApp
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/pages").Include(
-                        "~/Scripts/Classes/Core/ojb.helper.js",
-                        "~/Scripts/Classes/Login/ojb.login.js",
-                        "~/Scripts/Classes/DemoAndLab/ojb.demoandlab.js",
-                        "~/Scripts/Classes/DemoAndLab/ojb.tableofcontend.js",
-                        "~/Scripts/Classes/DemoAndLab/ojb.namespace.classname.js"));
+                        "~/Scripts/core/ojb.helper.js",
+                        "~/Scripts/pages/login/ojb.login.js",
+                        "~/Scripts/pages/demoandlab/ojb.demoandlab.js",
+                        "~/Scripts/pages/demoandlab/ojb.tableofcontend.js",
+                        "~/Scripts/pages/demoandlab/ojb.namespace.classname.js",
+                        "~/Scripts/pages/main.js"));
         }
     }
 }
