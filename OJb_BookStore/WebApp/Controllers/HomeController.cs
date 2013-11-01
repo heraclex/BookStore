@@ -3,11 +3,12 @@
     using System.Web.Mvc;
     using Ojb.Framework.WebBase.Authorize;
 
+    using WebApp.ViewModel;
     using WebApp.ViewModel.Builder;
 
     /// <summary>
     /// </summary>
-    public class HomeController : OjbControllerBase
+    public class HomeController : Controller
     {
         private readonly IHomeVMBuilder homeVMBuilder = null;
 
@@ -18,11 +19,11 @@
 
         public ActionResult Index()
         {
-            var homeVM = this.homeVMBuilder.BuidlerHomeView();
+            // var homeVM = this.homeVMBuilder.BuidlerHomeView();
 
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            //ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
-            return this.View(homeVM);
+            return this.View(new HomeVM());
         }
 
         public ActionResult About()

@@ -223,6 +223,28 @@
     <Compile Include="Controllers\DemoAndLabController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\framework\amd\r.js" />
+    <Content Include="App\framework\amd\require.js" />
+    <Content Include="App\framework\amd\text.js" />
+    <Content Include="App\framework\durandal\activator.js" />
+    <Content Include="App\framework\durandal\app.js" />
+    <Content Include="App\framework\durandal\binder.js" />
+    <Content Include="App\framework\durandal\composition.js" />
+    <Content Include="App\framework\durandal\events.js" />
+    <Content Include="App\framework\durandal\plugins\dialog.js" />
+    <Content Include="App\framework\durandal\plugins\history.js" />
+    <Content Include="App\framework\durandal\plugins\http.js" />
+    <Content Include="App\framework\durandal\plugins\observable.js" />
+    <Content Include="App\framework\durandal\plugins\router.js" />
+    <Content Include="App\framework\durandal\plugins\serializer.js" />
+    <Content Include="App\framework\durandal\plugins\widget.js" />
+    <Content Include="App\framework\durandal\system.js" />
+    <Content Include="App\framework\durandal\viewEngine.js" />
+    <Content Include="App\framework\durandal\viewLocator.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\favicon.jpg" />
+    <Content Include="Content\Site_bak.css" />
     <Content Include="Content\Images\loader.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -278,8 +300,12 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\themes\bootstrap\bootstrap-theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Classes\Core\ojb.helper.js" />
     <Content Include="Scripts\Classes\DemoAndLab\ojb.demoandlab.js" />
     <Content Include="Scripts\Classes\DemoAndLab\ojb.namespace.classname.js" />
@@ -354,6 +380,7 @@
     <Content Include="Views\DemoAndLab\Popup.cshtml" />
     <Content Include="Scripts\jquery-2.0.3.min.map" />
     <Content Include="Views\DemoAndLab\Table.cshtml" />
+    <Content Include="Views\Shared\HeaderPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

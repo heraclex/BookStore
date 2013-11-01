@@ -10,10 +10,11 @@ namespace WebApp
         {
             RegisterScripts(bundles);
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
-
-            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
-                        "~/Content/themes/base/jquery.ui.core.css",
+            bundles.Add(new StyleBundle("~/Content/css")
+                .Include("~/Content/bootstrap.css"));
+            
+            bundles.Add(new StyleBundle("~/Content/themes/base/css")
+                .Include("~/Content/themes/base/jquery.ui.core.css",
                         "~/Content/themes/base/jquery.ui.resizable.css",
                         "~/Content/themes/base/jquery.ui.selectable.css",
                         "~/Content/themes/base/jquery.ui.accordion.css",
@@ -25,10 +26,18 @@ namespace WebApp
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new StyleBundle("~/Content/themes/bootstrap/css")
+                .Include("~/Content/bootstrap/bootstrap-theme.css"));
+
+            bundles.Add(new StyleBundle("~/Content/site/css").Include("~/Content/site.css"));
         }
 
         private static void RegisterScripts(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/bootstrapJs").Include(
+                        "~/Scripts/bootstrap.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/JSON").Include(
                         "~/Scripts/json2.js"));
 
