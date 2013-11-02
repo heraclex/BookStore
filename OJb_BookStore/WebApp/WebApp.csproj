@@ -441,6 +441,9 @@
     <Content Include="Views\DemoAndLab\Table.cshtml" />
     <Content Include="Views\Shared\HeaderPartial.cshtml" />
     <Content Include="Views\Shared\NavbarPartial.cshtml" />
+    <Content Include="Views\Home\Partial\Introbox.cshtml" />
+    <Content Include="Views\Home\Partial\ShowCase.cshtml" />
+    <Content Include="Views\Home\Partial\Books.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
