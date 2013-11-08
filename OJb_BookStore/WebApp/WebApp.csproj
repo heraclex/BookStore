@@ -195,6 +195,8 @@
     <Compile Include="CastleConfiguration\CastleLogCallInterceptor.cs" />
     <Compile Include="CastleConfiguration\CastleTxInterceptor.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\Apis\ProductApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TestAuthorizeController.cs" />
@@ -223,6 +225,7 @@
     <Compile Include="Controllers\DemoAndLabController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\framework\amd\almond-custom.js" />
     <Content Include="App\framework\amd\r.js" />
     <Content Include="App\framework\amd\require.js" />
     <Content Include="App\framework\amd\text.js" />
@@ -239,10 +242,32 @@
     <Content Include="App\framework\durandal\plugins\serializer.js" />
     <Content Include="App\framework\durandal\plugins\widget.js" />
     <Content Include="App\framework\durandal\system.js" />
+    <Content Include="App\framework\durandal\transitions\entrance.js" />
     <Content Include="App\framework\durandal\viewEngine.js" />
     <Content Include="App\framework\durandal\viewLocator.js" />
+    <Content Include="App\viewmodels\flickr.js" />
+    <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\viewmodels\welcome.js" />
+    <Content Include="App\views\detail.html" />
+    <Content Include="App\views\flickr.html" />
+    <Content Include="App\views\shell.html" />
+    <Content Include="App\views\welcome.html" />
+    <Content Include="App\main.js" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dashboardlayout\css\durandal.css" />
+    <Content Include="Content\dashboardlayout\css\font-awesome-ie7.css" />
+    <Content Include="Content\dashboardlayout\css\font-awesome-ie7.min.css" />
+    <Content Include="Content\dashboardlayout\css\font-awesome.css" />
+    <Content Include="Content\dashboardlayout\css\font-awesome.min.css" />
+    <Content Include="Content\dashboardlayout\css\ie10mobile.css" />
+    <Content Include="Content\dashboardlayout\css\starterkit.css" />
+    <Content Include="Content\dashboardlayout\font\fontawesome-webfont.svg" />
+    <Content Include="Content\dashboardlayout\img\icon.png" />
+    <Content Include="Content\dashboardlayout\img\ios-startup-image-landscape.png" />
+    <Content Include="Content\dashboardlayout\img\ios-startup-image-portrait.png" />
     <Content Include="Content\Images\elegancy-nav-logo.png" />
     <Content Include="Content\Images\favicon.jpg" />
     <Content Include="Content\Images\figure1.jpg" />
@@ -364,6 +389,10 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\dashboardlayout\font\fontawesome-webfont.eot" />
+    <Content Include="Content\dashboardlayout\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\dashboardlayout\font\fontawesome-webfont.woff" />
+    <Content Include="Content\dashboardlayout\font\FontAwesome.otf" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\core\ojb.helper.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
@@ -444,6 +473,8 @@
     <Content Include="Views\Home\Partial\Introbox.cshtml" />
     <Content Include="Views\Home\Partial\ShowCase.cshtml" />
     <Content Include="Views\Home\Partial\Books.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
