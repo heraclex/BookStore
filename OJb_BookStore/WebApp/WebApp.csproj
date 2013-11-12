@@ -245,9 +245,11 @@
     <Content Include="App\framework\durandal\transitions\entrance.js" />
     <Content Include="App\framework\durandal\viewEngine.js" />
     <Content Include="App\framework\durandal\viewLocator.js" />
+    <Content Include="App\viewmodels\addproduct.js" />
     <Content Include="App\viewmodels\flickr.js" />
     <Content Include="App\viewmodels\shell.js" />
     <Content Include="App\viewmodels\welcome.js" />
+    <Content Include="App\views\addproduct.html" />
     <Content Include="App\views\detail.html" />
     <Content Include="App\views\flickr.html" />
     <Content Include="App\views\shell.html" />
